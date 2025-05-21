@@ -139,6 +139,6 @@ Learning and building in Web Development, JavaScript, Python, and AI.
 
 ---
 
-## 🔗 Live Preview (Optional)
+## 🔗 Live Preview
 
-_You can host this app on GitHub Pages or Netlify and add a link here._
+[Live ](https://todolist-sharman.netlify.app/)
