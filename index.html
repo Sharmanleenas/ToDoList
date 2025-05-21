@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advanced To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>📝 Advanced To-Do List</h1>
+
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Enter task..." />
+      <input type="date" id="dueDateInput" />
+      <select id="prioritySelect">
+        <option value="low">🟢 Low</option>
+        <option value="medium">🟡 Medium</option>
+        <option value="high">🔴 High</option>
+      </select>
+      <select id="categorySelect">
+        <option value="general">General</option>
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+        <option value="shopping">Shopping</option>
+      </select>
+      <button onclick="addOrUpdateTask()">Add</button>
+      <button id="cancelEditBtn" style="display:none" onclick="cancelEdit()">Cancel Edit</button>
+    </div>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search tasks..." oninput="renderTasks()" />
+      <select id="sortSelect" onchange="renderTasks()">
+        <option value="created">Sort by Created</option>
+        <option value="priority">Sort by Priority</option>
+        <option value="dueDate">Sort by Due Date</option>
+        <option value="finishedAt">Sort by Finished Time</option>
+      </select>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
+
+    <div class="filter-section">
+      <button onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('completed')">Completed</button>
+      <button onclick="setFilter('pending')">Pending</button>
+      <button onclick="setFilter('overdue')">Overdue</button>
+    </div>
+
+    <ul id="taskList" draggable="true"></ul>
+
+    <div class="analytics">
+      <h2>Analytics</h2>
+      <p>Total Tasks: <span id="totalTasks">0</span></p>
+      <p>Completed Tasks: <span id="completedTasks">0</span></p>
+      <p>Pending Tasks: <span id="pendingTasks">0</span></p>
+      <p>Overdue Tasks: <span id="overdueTasks">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
